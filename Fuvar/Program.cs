@@ -64,6 +64,40 @@ namespace Fuvar
 
             Console.WriteLine($"6. feladat: {km}km");
 
+            double leghosszabb = fuvarok[0].Idotartam;
+            int maxInd = 0;
+            for (int i = 0; i < fuvarok.Count; i++)
+            {
+                if (fuvarok[i].Idotartam > leghosszabb)
+                {
+                    leghosszabb = fuvarok[i].Idotartam;
+                    maxInd = i;
+                }
+            }
+
+            Console.WriteLine("7. feladat: Leghosszabb fuvar:");
+            Console.WriteLine($"\tFuvar hossza: {fuvarok[maxInd].Idotartam} masodperc");
+            Console.WriteLine($"\tTaxi azonosito: {fuvarok[maxInd].ID}");
+            Console.WriteLine($"\tMegtett tavolsag: {fuvarok[maxInd].Megtett:N1}km");
+            Console.WriteLine($"\tViteldij: {fuvarok[maxInd].Vitel:N2}$");
+
+            Console.WriteLine("8. feladat: hibak.txt");
+            if (File.Exists("hibak.txt"))
+            {
+                File.Delete("hibak.txt");
+            }
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja\n");
+            foreach (Fuvar fuvar3 in fuvarok)
+            {
+                if (fuvar3.Idotartam > 0 && fuvar3.Vitel > 0 && fuvar3.Megtett == 0)
+                {
+                    sb.Append($"{fuvar3.ID}; {fuvar3.Indulas}; {fuvar3.Idotartam}; {fuvar3.Megtett}; {fuvar3.Vitel}; {fuvar3.Borr}; {fuvar3.Fizm}\n");
+                }
+            }
+
+            File.WriteAllText("hibak.txt", sb.ToString());
 
             Console.ReadLine();
         }
