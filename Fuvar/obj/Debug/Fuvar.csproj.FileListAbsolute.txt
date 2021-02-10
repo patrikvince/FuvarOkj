@@ -1,0 +1,7 @@
+D:\iskola\C#\Fuvar\Fuvar\bin\Debug\Fuvar.exe.config
+D:\iskola\C#\Fuvar\Fuvar\bin\Debug\Fuvar.exe
+D:\iskola\C#\Fuvar\Fuvar\bin\Debug\Fuvar.pdb
+D:\iskola\C#\Fuvar\Fuvar\obj\Debug\Fuvar.csprojAssemblyReference.cache
+D:\iskola\C#\Fuvar\Fuvar\obj\Debug\Fuvar.csproj.CoreCompileInputs.cache
+D:\iskola\C#\Fuvar\Fuvar\obj\Debug\Fuvar.exe
+D:\iskola\C#\Fuvar\Fuvar\obj\Debug\Fuvar.pdb
